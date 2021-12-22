@@ -40,3 +40,13 @@ function changePixelColor(event) {
 for (const pixel of pixelsList) {
     pixel.addEventListener('click', changePixelColor);
 }
+
+const clearButton = document.getElementById('clear-board');
+
+function clearBoard() {
+    for (const pixel of pixelsList) {
+        pixel.style.backgroundColor = '#ffffff';
+    }
+}
+
+clearButton.addEventListener('click', clearBoard);
