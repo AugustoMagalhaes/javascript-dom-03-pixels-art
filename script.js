@@ -29,3 +29,14 @@ function paletteClickColor(event) {
 for (const colorsListItem of colorsList) {
     colorsListItem.addEventListener('click', paletteClickColor);
 }
+
+function changePixelColor(event) {
+    const coloredPixel = event.target;
+    const colorSelectedElement = document.getElementsByClassName('color selected')[0]; 
+    const actualSelectedColor = window.getComputedStyle(colorSelectedElement, null).getPropertyValue('background-color');
+    coloredPixel.style.backgroundColor = actualSelectedColor;
+}
+
+for (const pixel of pixelsList) {
+    pixel.addEventListener('click', changePixelColor);
+}
