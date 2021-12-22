@@ -1,4 +1,5 @@
 const pixelBoard = document.getElementById('pixel-board');
+let reloadTimes = 1;
 
 function createPixelBoard(boardSize) {
   for (let index = 0; index < boardSize; index += 1) {
@@ -13,11 +14,19 @@ createPixelBoard(25);
 const pixelsList = document.getElementsByClassName('pixel');
 const colorsList = document.getElementsByClassName('color');
 
+function randInt() {
+  return Math.floor(Math.random() * 256);
+}
+
 window.onload = function () {
   const firstColorPalette = document.getElementsByClassName('color')[0];
   firstColorPalette.className += ' ' + 'selected';
   const inputBoardSize = document.getElementById('board-size');
   inputBoardSize.value = '';
+  for (let index = 1; index < colorsList.length; index += 1) {
+    const colorItem = colorsList[index];
+    colorItem.style.backgroundColor = `rgb(${randInt()}, ${randInt()}, ${randInt()})`;
+  }
 };
 
 function paletteClickColor(event) {
@@ -34,7 +43,8 @@ for (const colorsListItem of colorsList) {
 
 function changePixelColor(event) {
   const coloredPixel = event.target;
-  const colorSelectedElement = document.getElementsByClassName('color selected')[0];
+  const colorSelectedElement =
+    document.getElementsByClassName('color selected')[0];
   const actualSelectedColor = window
     .getComputedStyle(colorSelectedElement, null)
     .getPropertyValue('background-color');
@@ -67,10 +77,10 @@ function destroyPixelBoard() {
 function resizeBoard() {
   const inputBoardSize = document.getElementById('board-size');
   if (inputBoardSize.value > 50) {
-    alert('Embora o valor seja maior que 50, o quadro se limitará a 50 x 50.')
+    alert('Embora o valor seja maior que 50, o quadro se limitará a 50 x 50.');
   }
-  const newSize = (inputBoardSize.value > 50) ? 50 : inputBoardSize.value;
-  console.log('ns: ', newSize)
+  const newSize = inputBoardSize.value > 50 ? 50 : inputBoardSize.value;
+  console.log('ns: ', newSize);
   try {
     if (newSize === '') {
       throw 'Board inválido!';
@@ -79,10 +89,10 @@ function resizeBoard() {
     } else if (newSize < 0) {
       throw 'Digite um número positivo.';
     } else if (newSize < 5) {
-      throw 'Insira um valor maior que 5.';      
+      throw 'Insira um valor maior que 5.';
     } else if (newSize != parseInt(newSize)) {
-      throw 'Digite apenas números inteiros.'
-    } 
+      throw 'Digite apenas números inteiros.';
+    }
   } catch (err) {
     alert(err);
     inputBoardSize.value = '';
@@ -91,10 +101,10 @@ function resizeBoard() {
     pixelBoard.style.width = pixelBoardWidth;
     createPixelBoard(25);
     return;
-  } 
-  destroyPixelBoard();  
+  }
+  destroyPixelBoard();
   createPixelBoard(newSize * newSize);
-  const newPixelBoardWidth = (newSize * 40) + (newSize * 2) + 'px'; // (newSize * 2) pq cada lateral do pixel tem 1px de largura.
+  const newPixelBoardWidth = newSize * 40 + newSize * 2 + 'px'; // (newSize * 2) pq cada lateral do pixel tem 1px de largura.
   pixelBoard.style.width = newPixelBoardWidth;
   inputBoardSize.value = '';
 }
@@ -102,7 +112,7 @@ function resizeBoard() {
 changeBoardSizeBtn.addEventListener('click', resizeBoard);
 const inputBoardSize = document.getElementById('board-size');
 inputBoardSize.addEventListener('keypress', function (event) {
-  if (event.key === "Enter") {
-      resizeBoard();
+  if (event.key === 'Enter') {
+    resizeBoard();
   }
 });
