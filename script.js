@@ -9,3 +9,10 @@ function createPixelBoard(boardSize) {
 }
 
 createPixelBoard(25);
+
+const pixelsList = document.getElementsByClassName('pixel');
+
+window.onload = function () {
+    const firstColorPalette = document.getElementsByClassName('color')[0];
+    firstColorPalette.className += ' ' + 'selected';
+};
