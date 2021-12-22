@@ -42,11 +42,35 @@ body {
     color: #ffffff;
 }
 
+#input-label {
+    font-size: 15px;
+    color: #000000;
+    margin-left: 30px;
+    margin-top: 20px;
+    display: inline-block;
+    font-weight: 600;
+}
+
+#board-size {
+    font-size: 15px;   
+    border: 1px solid #000000;
+    width: 190px;   
+}
+
+#generate-board {
+    font-size: 15px;
+    margin-left: 5px;
+    border: 1px solid #000000;
+    border-radius: 8%;
+    background-color: #830a7d;
+    color: #ffffff;
+}
+
 #pixel-board {
     padding-top: 20px;
     margin-left: 30px;
     font-size: 0px;
-    width: 250px;
+    width: 210px;
 }
 
 .pixel {
