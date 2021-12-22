@@ -1,12 +1,13 @@
 #color-palette {
     font-size: 0px;
     /* fonte: https://pt.stackoverflow.com/questions/226811/n%C3%A3o-consigo-colocar-uma-div-colada-na-outra */
+    margin-left: 30px;
 }
 
 .color {
     border: 1px solid  #000000;
-    width: 25px;
-    height: 25px;
+    width: 40px;
+    height: 40px;
     display: inline-block;
     padding: 0px;
 }
@@ -25,4 +26,19 @@
 
 .color:nth-of-type(4) {
     background-color:  #0064ff;
+}
+
+#pixel-board {
+    padding-top: 20px;
+    margin-left: 30px;
+    font-size: 0px;
+    width: 250px;
+}
+
+.pixel {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000000;
+    display: inline-block;
+    background-color: #ffffff;
 }
