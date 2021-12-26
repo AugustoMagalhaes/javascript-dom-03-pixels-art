@@ -1,5 +1,9 @@
 body {
-    background-color: #98e659;
+    background-color: #1a0f7c;
+}
+
+#title {
+    color: #e4e9f5;
 }
 
 #color-palette {
@@ -33,7 +37,7 @@ body {
 }
 
 #clear-board {
-    font-size: 15px;
+    font-size: 18px;
     margin-left: 30px;
     margin-top: 20px;
     border: 1px solid #000000;
@@ -43,8 +47,8 @@ body {
 }
 
 #input-label {
-    font-size: 15px;
-    color: #000000;
+    font-size: 18px;
+    color: #e4e9f5;
     margin-left: 30px;
     margin-top: 20px;
     display: inline-block;
@@ -52,9 +56,9 @@ body {
 }
 
 #board-size {
-    font-size: 15px;   
+    font-size: 16px;   
     border: 1px solid #000000;
-    width: 190px;   
+    width: 225px;   
 }
 
 #generate-board {
