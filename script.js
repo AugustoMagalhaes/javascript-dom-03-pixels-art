@@ -26,7 +26,7 @@ window.onload = function () {
   for (let index = 1; index < colorsList.length; index += 1) {
     const colorItem = colorsList[index];
     colorItem.style.backgroundColor = `rgb(${randInt()}, ${randInt()}, ${randInt()})`;
-  }
+  }  
 };
 
 function paletteClickColor(event) {
@@ -100,6 +100,9 @@ function resizeBoard() {
     const pixelBoardWidth = '210px';
     pixelBoard.style.width = pixelBoardWidth;
     createPixelBoard(25);
+    for (const pixel of pixelsList) {
+      pixel.addEventListener('click', changePixelColor);
+    }
     return;
   }
   destroyPixelBoard();
@@ -107,6 +110,9 @@ function resizeBoard() {
   const newPixelBoardWidth = newSize * 40 + newSize * 2 + 'px'; // (newSize * 2) pq cada lateral do pixel tem 1px de largura.
   pixelBoard.style.width = newPixelBoardWidth;
   inputBoardSize.value = '';
+  for (const pixel of pixelsList) {
+    pixel.addEventListener('click', changePixelColor);
+  }
 }
 
 changeBoardSizeBtn.addEventListener('click', resizeBoard);
