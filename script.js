@@ -21,7 +21,7 @@ function randInt() {
 window.onload = function () {
   const firstColorPalette = document.getElementsByClassName('palette--pixel')[0];
   firstColorPalette.className += ' ' + 'selected';
-  const inputBoardSize = document.getElementById('setup--size');
+  const inputBoardSize = document.querySelector('.setup--size');
   inputBoardSize.value = '';
   for (let index = 1; index < colorsList.length; index += 1) {
     const colorItem = colorsList[index];
