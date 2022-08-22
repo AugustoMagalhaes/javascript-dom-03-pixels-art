@@ -1,0 +1,24 @@
+{
+  "name": "javascript-dom-03-pixels-art",
+  "version": "1.0.0",
+  "description": "https://augustomagalhaes.github.io/javascript-dom-03-pixels-art/",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-dev": "sass --watch --update --style=expanded sass:css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AugustoMagalhaes/javascript-dom-03-pixels-art.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AugustoMagalhaes/javascript-dom-03-pixels-art/issues"
+  },
+  "homepage": "https://github.com/AugustoMagalhaes/javascript-dom-03-pixels-art#readme",
+  "dependencies": {
+    "sass": "^1.54.5"
+  }
+}
