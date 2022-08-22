@@ -1,13 +1,13 @@
 body {
   align-items: center;
-  background-color: #08860b;
+  background-color: #294936;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
 }
 
 .title {
-  color: #e4e9f5;
+  color: #AEF6C7;
   font-size: 38px;
 }
 
@@ -57,7 +57,7 @@ body {
 }
 
 .setup--info {
-  color: #e4e9f5;
+  color: #AEF6C7;
   display: inline-block;
   font-size: 18px;
   font-weight: 600;
