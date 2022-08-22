@@ -1,40 +1,40 @@
-const pixelBoard = document.getElementById('pixel-board');
+const pixelBoard = document.querySelector('.board');
 let reloadTimes = 1;
 
 function createPixelBoard(boardSize) {
   for (let index = 0; index < boardSize; index += 1) {
     const pixelItem = document.createElement('div');
-    pixelItem.setAttribute('class', 'pixel');
+    pixelItem.setAttribute('class', 'board--pixel');
     pixelBoard.appendChild(pixelItem);
   }
 }
 
 createPixelBoard(25);
 
-const pixelsList = document.getElementsByClassName('pixel');
-const colorsList = document.getElementsByClassName('color');
+const pixelsList = document.getElementsByClassName('board--pixel');
+const colorsList = document.getElementsByClassName('palette--pixel');
 
 function randInt() {
   return Math.floor(Math.random() * 256);
 }
 
 window.onload = function () {
-  const firstColorPalette = document.getElementsByClassName('color')[0];
+  const firstColorPalette = document.getElementsByClassName('palette--pixel')[0];
   firstColorPalette.className += ' ' + 'selected';
-  const inputBoardSize = document.getElementById('board-size');
+  const inputBoardSize = document.getElementById('setup--size');
   inputBoardSize.value = '';
   for (let index = 1; index < colorsList.length; index += 1) {
     const colorItem = colorsList[index];
     colorItem.style.backgroundColor = `rgb(${randInt()}, ${randInt()}, ${randInt()})`;
-  }  
+  }
 };
 
 function paletteClickColor(event) {
   const selectedElement = event.target;
   for (const element of colorsList) {
-    element.className = 'color';
+    element.className = 'palette--pixel';
   }
-  selectedElement.className = 'color selected';
+  selectedElement.className = 'palette--pixel selected';
 }
 
 for (const colorsListItem of colorsList) {
@@ -43,8 +43,7 @@ for (const colorsListItem of colorsList) {
 
 function changePixelColor(event) {
   const coloredPixel = event.target;
-  const colorSelectedElement =
-    document.getElementsByClassName('color selected')[0];
+  const colorSelectedElement = document.getElementsByClassName('palette--pixel selected')[0];
   const actualSelectedColor = window
     .getComputedStyle(colorSelectedElement, null)
     .getPropertyValue('background-color');
@@ -55,7 +54,7 @@ for (const pixel of pixelsList) {
   pixel.addEventListener('click', changePixelColor);
 }
 
-const clearButton = document.getElementById('clear-board');
+const clearButton = document.querySelector('.btn--clear');
 
 function clearBoard() {
   for (const pixel of pixelsList) {
@@ -65,7 +64,7 @@ function clearBoard() {
 
 clearButton.addEventListener('click', clearBoard);
 
-const changeBoardSizeBtn = document.getElementById('generate-board');
+const changeBoardSizeBtn = document.querySelector('.setup--generate');
 
 function destroyPixelBoard() {
   for (let index = pixelsList.length - 1; index >= 0; index -= 1) {
@@ -75,7 +74,7 @@ function destroyPixelBoard() {
 }
 
 function resizeBoard() {
-  const inputBoardSize = document.getElementById('board-size');
+  const inputBoardSize = document.querySelector('.setup--size');
   if (inputBoardSize.value > 50) {
     alert('Embora o valor seja maior que 50, o quadro se limitará a 50 x 50.');
   }
@@ -116,7 +115,7 @@ function resizeBoard() {
 }
 
 changeBoardSizeBtn.addEventListener('click', resizeBoard);
-const inputBoardSize = document.getElementById('board-size');
+const inputBoardSize = document.querySelector('.setup--size');
 inputBoardSize.addEventListener('keypress', function (event) {
   if (event.key === 'Enter') {
     resizeBoard();
