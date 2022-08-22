@@ -1,31 +1,29 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pixels Art</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1 id="title">Paleta de Cores</h1>
-    <div id="color-palette">
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div>
-        <div class="color"></div>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <h1 class="title">Paleta de Cores</h1>
+    <div class="palette">
+      <div class="palette--pixel"></div>
+      <div class="palette--pixel"></div>
+      <div class="palette--pixel"></div>
+      <div class="palette--pixel"></div>
     </div>
     <div>
-        <button type="button" id="clear-board">Limpar</button>
+      <button type="button" class="btn--clear">Limpar</button>
     </div>
-    <div>
-        <label for="board-size" id="input-label">Tamanho do 'lado' do 'board':</label>
-        <input type="number" min="1" id="board-size" placeholder="Digite um valor entre 5 e 50">
-        <button id="generate-board">VQV</button>
+    <div class="setup">
+      <label for="setup--size" class="setup--info">Tamanho do 'lado' do 'board':</label>
+      <input type="number" min="1" class="setup--size" placeholder="Digite um valor entre 5 e 50" />
+      <button class="setup--generate">Gerar board</button>
     </div>
-    <div id="pixel-board">
-
-    </div>
+    <div class="board"></div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
