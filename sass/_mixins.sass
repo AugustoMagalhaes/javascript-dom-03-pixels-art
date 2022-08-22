@@ -1,0 +1,16 @@
+@mixin dimension ($width, $height: $width)
+  height: $height
+  width: $width
+
+@mixin pixel
+  @include dimension (40px)
+  border: 1px solid $black
+  display: inline-block
+
+@mixin button($font-size, $margin-left)
+  background-color: $black
+  border: 1px solid $black
+  border-radius: 8%
+  color: $white
+  font-size: $font-size
+  margin-left: $margin-left
