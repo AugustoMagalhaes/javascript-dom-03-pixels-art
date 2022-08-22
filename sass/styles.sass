@@ -1,0 +1,64 @@
+@import 'colors'
+@import 'mixins'
+
+body
+  align-items: center
+  background-color: $bg-body
+  display: flex
+  flex-flow: column wrap
+  justify-content: center
+
+.title
+  color: $light-color
+
+.palette
+  font-size: 0px
+  margin-left: 30px
+
+.palette--pixel
+  @include pixel
+  padding: 0px
+
+.palette--pixel:nth-of-type(1)
+  background-color: $black
+
+.palette--pixel:nth-of-type(2)
+  background-color: $sec-color
+
+.palette--pixel:nth-of-type(3)
+  background-color: $third-color
+
+.palette--pixel:nth-of-type(4)
+  background-color: $fourth-color
+
+.btn--clear
+  @include button(18px, 30px)
+  margin-top: 20px
+
+.setup--size
+  @include dimension (225px, auto)
+  border: 1px solid $black
+  font-size: 16px
+
+.setup--info
+  color: #e4e9f5
+  display: inline-block
+  font-size: 18px
+  font-weight: 600
+  margin-left: 30px
+  margin-top: 20px
+
+.setup--generate
+  @include button(15px, 5px)
+
+.board
+  @include dimension (210px)
+  padding-top: 20px
+  margin-left: 30px
+  font-size: 0px
+
+.board--pixel
+  @include pixel
+  background-color: $white
+
+
